@@ -1,0 +1,20 @@
+.container {
+  height: 239px;
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.response-container {
+  margin-top: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  .emit-value {
+    font-size: 30px;
+    text-align: center;
+  }
+}

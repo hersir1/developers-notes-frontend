@@ -1,0 +1,75 @@
+<div class="container">
+  <nz-divider nzText="Switch Map" nzOrientation="center"></nz-divider>
+
+  <div class="button-container">
+    <button nz-button nzType="primary" (click)="switchMapExample()" [nzLoading]="switchMapSubscription && !switchMapSubscription.closed">SwitchMap</button>
+  </div>
+
+  <div class="response-container">
+    <div *ngFor="let elem of switchMapResponses">
+      <div class="emit-value">
+        {{elem.emitValue}}
+      </div>
+      <div *ngIf="elem.rxjsResponse" class="rxjs-response">
+        <pre>{{elem.rxjsResponse | json}}</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <nz-divider nzText="Merge Map" nzOrientation="center"></nz-divider>
+
+  <div class="button-container">
+    <button nz-button nzType="primary" (click)="mergeMapExample()" [nzLoading]="mergeMapSubscription && !mergeMapSubscription.closed">MergeMap</button>
+  </div>
+
+  <div class="response-container">
+    <div *ngFor="let elem of mergeMapResponses">
+      <div class="emit-value">
+        {{elem.emitValue}}
+      </div>
+      <div *ngIf="elem.rxjsResponse" class="rxjs-response">
+        <pre>{{elem.rxjsResponse | json}}</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <nz-divider nzText="Concat Map" nzOrientation="center"></nz-divider>
+
+  <div class="button-container">
+    <button nz-button nzType="primary" (click)="concatMapExample()" [nzLoading]="concatMapSubscription && !concatMapSubscription.closed">Concat Map</button>
+  </div>
+
+  <div class="response-container">
+    <div *ngFor="let elem of concatMapResponses">
+      <div class="emit-value">
+        {{elem.emitValue}}
+      </div>
+      <div *ngIf="elem.rxjsResponse" class="rxjs-response">
+        <pre>{{elem.rxjsResponse | json}}</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <nz-divider nzText="Exhaust Map" nzOrientation="center"></nz-divider>
+
+  <div class="button-container">
+    <button nz-button nzType="primary" (click)="exhaustMapExample()" [nzLoading]="exhaustMapSubscription && !exhaustMapSubscription.closed">ExhaustMap</button>
+  </div>
+
+  <div class="response-container">
+    <div *ngFor="let elem of exhaustMapResponses">
+      <div class="emit-value">
+        {{elem.emitValue}}
+      </div>
+      <div *ngIf="elem.rxjsResponse" class="rxjs-response">
+        <pre>{{elem.rxjsResponse | json}}</pre>
+      </div>
+    </div>
+  </div>
+</div>
