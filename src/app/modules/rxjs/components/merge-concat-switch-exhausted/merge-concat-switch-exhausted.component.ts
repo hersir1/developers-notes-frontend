@@ -37,7 +37,7 @@ export class MergeConcatSwitchExhaustedComponent implements OnInit {
   public exhaustMapSubscription: Subscription;
 
   constructor(
-    private rxjsExampleService: RxjsService
+    private rxjsService: RxjsService
   ) {
   }
 
@@ -58,7 +58,7 @@ export class MergeConcatSwitchExhaustedComponent implements OnInit {
           emitValue: id,
           rxjsResponse: null
         })),
-        mergeMap((id) => this.rxjsExampleService.getRxJxExampleById(id)),
+        mergeMap((id) => this.rxjsService.getDataWithDelay(id)),
         tap((result) => {
           this.mergeMapResponses = this.mergeMapResponses.map(elem => {
             if (elem.emitValue === result.id) {
@@ -87,7 +87,7 @@ export class MergeConcatSwitchExhaustedComponent implements OnInit {
           emitValue: id,
           rxjsResponse: null
         })),
-        switchMap((id) => this.rxjsExampleService.getRxJxExampleById(id)),
+        switchMap((id) => this.rxjsService.getDataWithDelay(id)),
         tap((result) => {
           this.switchMapResponses = this.switchMapResponses.map(elem => {
             if (elem.emitValue === result.id) {
@@ -116,7 +116,7 @@ export class MergeConcatSwitchExhaustedComponent implements OnInit {
           emitValue: id,
           rxjsResponse: null
         })),
-        exhaustMap((id) => this.rxjsExampleService.getRxJxExampleById(id)),
+        exhaustMap((id) => this.rxjsService.getDataWithDelay(id)),
         tap((result) => {
           this.exhaustMapResponses = this.exhaustMapResponses.map(elem => {
             if (elem.emitValue === result.id) {
@@ -145,7 +145,7 @@ export class MergeConcatSwitchExhaustedComponent implements OnInit {
           emitValue: id,
           rxjsResponse: null
         })),
-        concatMap((id) => this.rxjsExampleService.getRxJxExampleById(id)),
+        concatMap((id) => this.rxjsService.getDataWithDelay(id)),
         tap((result) => {
           this.concatMapResponses = this.concatMapResponses.map(elem => {
             if (elem.emitValue === result.id) {

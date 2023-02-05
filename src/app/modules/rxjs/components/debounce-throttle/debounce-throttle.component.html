@@ -1,1 +1,37 @@
-<p>debounce-throttle works!</p>
+<div class="container">
+  <nz-divider nzText="Debounce Time" nzOrientation="center"></nz-divider>
+
+  <div class="button-container">
+    <button nz-button nzType="primary" (click)="debounceTimeExample()" [nzLoading]="debounceTimeSubscription && !debounceTimeSubscription.closed">DebounceTime</button>
+  </div>
+
+  <div class="response-container">
+    <div *ngFor="let elem of debounceTimeResponses">
+      <div class="emit-value">
+        {{elem.emitValue}}
+      </div>
+      <div *ngIf="elem.rxjsResponse" class="rxjs-response">
+        <pre>{{elem.rxjsResponse | json}}</pre>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <nz-divider nzText="Throttle Time" nzOrientation="center"></nz-divider>
+
+  <div class="button-container">
+    <button nz-button nzType="primary" (click)="throttleTimeExample()" [nzLoading]="throttleTimeSubscription && !throttleTimeSubscription.closed">ThrottleTime</button>
+  </div>
+
+  <div class="response-container">
+    <div *ngFor="let elem of throttleTimeResponses">
+      <div class="emit-value">
+        {{elem.emitValue}}
+      </div>
+      <div *ngIf="elem.rxjsResponse" class="rxjs-response">
+        <pre>{{elem.rxjsResponse | json}}</pre>
+      </div>
+    </div>
+  </div>
+</div>

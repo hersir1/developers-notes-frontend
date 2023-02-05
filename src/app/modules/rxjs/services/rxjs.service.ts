@@ -13,7 +13,11 @@ export class RxjsService {
   ) {
   }
 
-  getRxJxExampleById(id: number): Observable<RxjsResponse> {
-    return this.httpClient.get<RxjsResponse>(`${this.basePath}/users/${id}`);
+  getDataWithDelay(id: number): Observable<RxjsResponse> {
+    return this.httpClient.get<RxjsResponse>(`${this.basePath}/data-with-delay/${id}`);
+  }
+
+  getData(id: number): Observable<RxjsResponse> {
+    return this.httpClient.get<RxjsResponse>(`${this.basePath}/data/${id}`);
   }
 }

@@ -16,7 +16,7 @@ const routes: Routes = [
     component: MergeConcatSwitchExhaustedComponent
   },
   {
-    path: 'debounce-time',
+    path: 'debounce-throttle-time',
     component: DebounceThrottleComponent
   }
 ];
