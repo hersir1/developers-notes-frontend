@@ -1,0 +1,18 @@
+<div class="main-container">
+  <div>
+    <nz-card [nzCover]="rxjsTemplate" nzHoverable [routerLink]="['rxjs']">
+      <nz-card-meta nzTitle="RxJS"></nz-card-meta>
+    </nz-card>
+    <ng-template #rxjsTemplate>
+      <img alt="RxJS" src="assets/rxjs.svg" class="main-card-image"/>
+    </ng-template>
+  </div>
+  <div>
+    <nz-card [nzCover]="angularTemplate" nzHoverable>
+      <nz-card-meta nzTitle="Angular"></nz-card-meta>
+    </nz-card>
+    <ng-template #angularTemplate>
+      <img alt="Angular" src="assets/angular.svg" class="main-card-image"/>
+    </ng-template>
+  </div>
+</div>

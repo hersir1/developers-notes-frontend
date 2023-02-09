@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { MainComponent } from './modules/main/main.component';
 
 const routes: Routes = [
   {
-    path: 'rxjs-examples',
-    loadChildren: () => import('./modules/rxjs-examples/rxjs-examples.module').then(m => m.RxjsExamplesModule)
+    path: '',
+    component: MainComponent
+  },
+  {
+    path: 'rxjs',
+    loadChildren: () => import('./modules/rxjs/rxjs.module').then(m => m.RxjsModule)
   }
 ];
 
