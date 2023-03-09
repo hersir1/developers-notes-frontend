@@ -50,10 +50,8 @@ export class MergeConcatSwitchExhaustedComponent implements OnInit {
       this.mergeMapSubscription.unsubscribe();
       this.mergeMapResponses = [];
     }
-    this.mergeMapSubscription = interval(400)
+    this.mergeMapSubscription = from([1, 2, 3, 4])
       .pipe(
-        take(5),
-        filter((id) => id !== 0),
         tap((id) => this.mergeMapResponses.push({
           emitValue: id,
           rxjsResponse: null
@@ -79,10 +77,8 @@ export class MergeConcatSwitchExhaustedComponent implements OnInit {
       this.switchMapSubscription.unsubscribe();
       this.switchMapResponses = [];
     }
-    this.switchMapSubscription = interval(400)
+    this.switchMapSubscription = from([1, 2, 3, 4])
       .pipe(
-        take(5),
-        filter((id) => id !== 0),
         tap((id) => this.switchMapResponses.push({
           emitValue: id,
           rxjsResponse: null
@@ -108,10 +104,8 @@ export class MergeConcatSwitchExhaustedComponent implements OnInit {
       this.exhaustMapSubscription.unsubscribe();
       this.exhaustMapResponses = [];
     }
-    this.exhaustMapSubscription = interval(400)
+    this.exhaustMapSubscription = from([1, 2, 3, 4])
       .pipe(
-        take(5),
-        filter((id) => id !== 0),
         tap((id) => this.exhaustMapResponses.push({
           emitValue: id,
           rxjsResponse: null
@@ -137,10 +131,8 @@ export class MergeConcatSwitchExhaustedComponent implements OnInit {
       this.concatMapSubscription.unsubscribe();
       this.concatMapResponses = [];
     }
-    this.concatMapSubscription = interval(400)
+    this.concatMapSubscription = from([1, 2, 3, 4])
       .pipe(
-        take(5),
-        filter((id) => id !== 0),
         tap((id) => this.concatMapResponses.push({
           emitValue: id,
           rxjsResponse: null
